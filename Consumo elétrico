@@ -1,0 +1,29 @@
+consumo = int(input('Qual o consumo de kWh? '))
+print('Qual o tipo de instalação?')
+print('Pressione R para residência.')
+print('Pressione I para indústria.')
+print('Pressione C para comércio.')
+instalacao = input()
+if instalacao == 'R':
+  if consumo < 500:
+    res = consumo * 0.40
+    print('Valor à pagar: R$ {:.2f} reais' .format(res))
+  else: 
+    res = consumo * 0.65
+    print('Valor à pagar: R$ {:.2f} reais' .format(res))
+elif instalacao == 'I':
+  if consumo < 5000:
+    res = consumo * 0.55
+    print('Valor à pagar: R$ {:.2f} reais.' .format(res))
+  else: 
+    res = consumo * 0.60
+    print('Valor à pagar: R$ {:.2f} reais.' .format(res))
+elif instalacao == 'C':
+  if consumo < 1000:
+    res = consumo * 0.55
+    print('Valor à pagar: R$ {:.2f} reais.' .format(res))
+  else: 
+    res = consumo * 0.60
+    print('Valor à pagar: R$ {:.2f} reais.' .format(res))
+else:
+  print('Tipo de instalação inválida!')
