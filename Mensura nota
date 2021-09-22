@@ -1,0 +1,19 @@
+consulta_nota = int(input('Deseja consultar sua nota? 0 - Não     1 - Sim ')) #input para perguntar ao usuário
+while consulta_nota == 1: #laço while utilizado quando a resposta do input for 'sim'
+  nome = input('Digite seu nome: ') #input perguntando o nome do aluno
+  nota = float(input('Qual a sua nota? ')) #input perguntando a nota do aluno
+  if 0 <= nota < 3: # if e elif utilizados como teste lógico para as notas
+    conceito = "E" #mensuração da nota mediante conceito dentro do if e posteriormente elif
+  elif 3 <= nota < 5:
+    conceito = "D"
+  elif 5 <= nota < 7:
+    conceito = "C"
+  elif 7 <= nota < 9:
+    conceito = "B"
+  elif 9 <= nota <= 10:
+    conceito = "A"
+  else:
+    print('Dado inválido. Encerrando..') #print para caso a condição do if ou elif não sejam satisfeitas
+    break #instrução break para encerrar o laço quando a situação do comentário acima ocorrer
+  print('O aluno {} tirou nota {} e se enquadra no conceito {}.' .format(nome, nota, conceito))
+  #print final do programa, mencionando as váriavéis com o .format
