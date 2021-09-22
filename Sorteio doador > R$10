@@ -1,0 +1,23 @@
+import random #implementa geradores de valores aleatórios
+doadores = [] #lista de doadores vazia
+
+def cad(doador:str, doacao:float): #função definida para cadastrar quem doou mais de R$10,00.
+    doadores.extend( ((doador + ' ') * int(doacao//10)).split() )
+    return
+
+def sorteio(): #função para sorteio um vencedor da lista
+    random.shuffle (doadores) #método para mixar a lista, conforme orientação do professor
+    return random.choice(doadores) #retornar para o programa principal um sorteado
+
+cadastro = input('Deseja cadastrar? S - Sim | N - Não ') #input para solicitar ao usuário se deseja cadastrar mais nomes
+
+while cadastro.lower() == 's': #laço utilizado para manter o cadastro
+    doador = input('Digite o nome do doador: ')
+    doacao = float(input('Valor doado: '))
+    
+    cad(doador, doacao) #utilização da função
+    cadastro = input('Deseja cadastrar? S - Sim  | N - Não ') #input do laço
+
+if len(doadores) > 0: #if utilizado para sortear um vencedor caso a lista possua mais de um nome
+    print('Lista de doadores para sorteio: {}.' .format(doadores))    
+    print('O vencedor(a) foi: {}' .format(sorteio()))
