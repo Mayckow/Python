@@ -1,0 +1,23 @@
+lista = [] #lista dos produtos
+while True : #laço utilizado para o cadastramento contínuo
+    new_prod = {} #dicionário dos novos produtos
+    new_prod['codigo'] = int(input('Código do produto: ')) #input para inserir o código do produto na lista
+    
+    if new_prod['codigo'] == 0: #if como condição para encerramento do laço while
+        print('Encerrando..')
+        break
+    
+    new_prod['estoque'] = int(input('Qtd em estoque: ')) #input para adicionar a qtd de estoque no código do produto
+    new_prod['minimo'] = int(input('Qtd mínima p/ estoque: ')) #input para adicionar a qtd de estoque mínima no código do produto
+    lista.append(new_prod) #append para adcionar valores a lista
+
+if len(lista) > 0: #if para imprimir a lista se o conteúdo se for maior que zero
+    print('Lista de produtos: ')
+    print("Código   ", end='') #end utilizado para a continuidade do print na mesma linha
+    print(" Estoque   ", end='')
+    print("Mínimo   ")
+
+    for produto in sorted(lista, key=lambda item: item['codigo']): #laço for utilizado "encontrar" as listas com os respectivos dicionários
+        print(str(produto['codigo']).center(6), end='') #sorted usado para filtrar os valores em ordem decrescente
+        print(str(produto['estoque']).center(14), end='') #lambda utilizada para atribuir função aos objetos
+        print(str(produto['minimo']).center(6)) #center como modo de deixar o resultado final mais agradável ao usuário
