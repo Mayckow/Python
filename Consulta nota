@@ -1,0 +1,18 @@
+consulta_nota = int(input('Deseja consultar sua nota? 0 - Não     1 - Sim ')) #input para realizar a pergunta ao usuário se irá consultar
+while consulta_nota == 1: #
+  nome = input('Digite seu nome: ')
+  nota = float(input('Qual a sua nota? '))
+  if 0 <= nota < 3:
+    conceito = "E"
+  elif 3 <= nota < 5:
+    conceito = "D"
+  elif 5 <= nota < 7:
+    conceito = "C"
+  elif 7 <= nota < 9:
+    conceito = "B"
+  elif 9 <= nota <= 10:
+    conceito = "A"
+  else:
+    print('Dado inválido. Encerrando..')
+    break
+  print('O aluno {} tirou nota {} e se enquadra no conceito {}.' .format(nome, nota, conceito))
